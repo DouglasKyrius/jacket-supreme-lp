@@ -1,0 +1,223 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  background-color: #141414 !important;
+  overflow: hidden;
+}
+
+.background {
+  background: linear-gradient(50deg, rgb(250, 250, 250), rgb(224, 175, 39));
+  width: 100%;
+  height: 100vh;
+}
+
+.layer {
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  background-color: white;
+  z-index: 3;
+  animation: layer 1s ease forwards;
+  /* animation-delay: .5s; */
+}
+
+.layer:nth-child(2) {
+  background-color: black;
+  animation: layer 1s ease forwards;
+  animation-delay: 1s;
+  z-index: 2;
+}
+
+@keyframes layer {
+  0% {
+    transform: translateY(0%);
+  }
+  100% {
+    transform: translateY(100%);
+  }
+}
+
+.background img {
+  position: absolute;
+  width: 65%;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  animation: fade 1s ease forwards;
+  animation-delay: 3.2s;
+}
+
+@keyframes fade {
+  0%, 40%, 60%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+  }
+}
+
+.navbar {
+  z-index: 1;
+}
+
+.navbar-brand {
+  opacity: 0;
+  animation: logo 1s ease forwards;
+  animation-delay: 1.5s;
+}
+
+@keyframes logo {
+  0% {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.navbar-nav .nav-item {
+  position: relative;
+  opacity: 0;
+  animation: nav 1s ease forwards;
+}
+
+.navbar-nav .nav-item:nth-child(1) {
+  animation-delay: 1.5s;
+}
+.navbar-nav .nav-item:nth-child(2) {
+  animation-delay: 1.8s;
+}
+.navbar-nav .nav-item:nth-child(3) {
+  animation-delay: 2.1s;
+}
+.navbar-nav .nav-item:nth-child(4) {
+  animation-delay: 2.4s;
+}
+.navbar-nav .nav-item:nth-child(5) {
+  animation-delay: 2.7s;
+}
+.navbar-nav .nav-item:nth-child(6) {
+  animation-delay: 3.0s;
+}
+
+@keyframes nav {
+  0% {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.navbar-nav .nav-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 0;
+  height: 3px;
+  background-color: rgb(214, 42, 42);
+  transition: .4s;
+}
+
+.navbar-nav .nav-item::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 3px;
+  background-color: rgb(214, 42, 42);
+  transition: .4s;
+}
+
+.navbar-nav .nav-item:hover::before,
+.navbar-nav .nav-item:hover::after {
+  width: 100%;
+}
+
+.navbar-nav .nav-item a {
+  transition: .4s;
+}
+
+.navbar-nav .nav-item a:hover {
+  color: rgb(190, 190, 190) !important;
+}
+
+.main-text {
+  position: absolute;
+  padding: 100px 170px 100px 60px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: white;
+  background: rgb(34, 34, 34);
+}
+
+.main-text .title h1 {
+  font-weight: 700;
+  line-height: 1.1;
+  opacity: 0;
+  animation: title 1s ease forwards;
+  animation-delay: 3s;
+}
+
+@keyframes title {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.main-text .text {
+  color: rgb(202, 202, 202);
+  opacity: 0;
+  animation: title 1s ease forwards;
+  animation-delay: 3.3s;
+}
+
+.main-text h3 {
+  margin-bottom: 10px;
+  opacity: 0;
+  animation: title 1s ease forwards;
+  animation-delay: 3.5s;
+}
+
+.main-text .AddCard {
+  background-color: #E2441F;
+  color: white;
+  opacity: 0;
+  animation: logo 1s ease forwards;
+  animation-delay: 4s;
+}
+
+.main-text .AddCard:hover {
+  background-color: rgb(197, 36, 36);
+  color: white;
+}
+
+.main-text .store {
+  background-color: rgb(182, 182, 182);
+  color: black;
+  opacity: 0;
+  animation: nav 1s ease forwards;
+  animation-delay: 4s;
+}
+
+.main-text .store:hover{
+  background-color: rgb(155, 154, 154);
+  color: black;
+}
